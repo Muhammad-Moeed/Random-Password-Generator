@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+
+<body>
+
+    <!-- Mobile Responsive menu -->
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Menu Button for Small Screens -->
+    <div class="small-menu" style="display: flex; align-items: center; justify-content: space-between;">
+        <img src="assets/logo.png" alt="Logo">
+        <span class="menu-btn" onclick="openNav()">☰</span>
+    </div>
+
+
+    <!-- Header for Large Screens -->
+    <div id="header" class="header">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <div class="nav">
+            <a href="#">For home</a>
+            <a href="#">For business</a>
+            <a href="#">For partners</a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href="#">About us</a>
+            <a href="#">Blogs</a> <br>
+            <a href="#">Security</a>
+            <a href="#">Privacy</a>
+            <a href="#">Performance</a>
+            <a href="#">Avast One</a>
+            <button
+                style="padding: 5px 15px; border: none; border-radius: 10px; font-weight: bold; background-color: #ffddbf;">New</button>
+        </div>
+    </div>
+
+    <!-- **********************Bannner******************** -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="heading text-center">
+                <h1>Random Password Generator</h1>
+                <p>Create strong and secure passwords to keep your account safe online.</p>
+            </div>
+    
+            <div class="Generator row"> <!-- Add row class to this div -->
+                <!-- Image Section -->
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                    <img src="assets/banner.svg" alt="" class="img-fluid mb-4">
+                </div>
+                
+                <!-- Password Generator Section -->
+                <div class="password col-lg-6 col-md-6 col-sm-12">
+                    <div class="copy">
+                        <input type="text" id="generatedPassword" value="61cnrNFtNED2sZtL" readonly>
+                        <span id="strength">Very strong</span>
+                        <button id="copyBtn">Copy</button>
+                    </div>
+                    <div class="slider-container">
+                        <button class="btn btn-outline-secondary btn-circle" onclick="changeLength(-1)">-</button>
+                        <input type="range" id="slider" min="0" max="50" value="23" class="form-range" oninput="updateLength()">
+                        <button class="btn btn-outline-secondary btn-circle" onclick="changeLength(1)">+</button>
+                    </div>
+                    <h4 style="color: rgb(97, 96, 96);">Password <br> length: <span id="passwordLength" style="color: black;">23</span></h4>
+    
+                    <div class="char text-center">
+                        <h5 style="color: rgb(97, 96, 96);">Characters <br> used:</h5>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="uppercase" checked>
+                            <label class="form-check-label" for="uppercase">ABC</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="lowercase" checked>
+                            <label class="form-check-label" for="lowercase">abc</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="numbers" checked>
+                            <label class="form-check-label" for="numbers">123</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="symbols">
+                            <label class="form-check-label" for="symbols">#$&</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <script src="app.js"></script>
+            <script src="bootstrap.js"></script>
+</body>
+
+</html>
