@@ -59,53 +59,152 @@
                 <h1>Random Password Generator</h1>
                 <p>Create strong and secure passwords to keep your account safe online.</p>
             </div>
-    
+
             <div class="Generator row"> <!-- Add row class to this div -->
                 <!-- Image Section -->
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                     <img src="assets/banner.svg" alt="" class="img-fluid mb-4">
                 </div>
-                
+
                 <!-- Password Generator Section -->
                 <div class="password col-lg-6 col-md-6 col-sm-12">
                     <div class="copy">
-                        <input type="text" id="generatedPassword" value="61cnrNFtNED2sZtL" readonly>
                         <span id="strength">Very strong</span>
+                        <input type="text" id="generatedPassword" value="61cnrNFtNED2sZtL" readonly>
                         <button id="copyBtn">Copy</button>
                     </div>
                     <div class="slider-container">
+                        <h4 style="color: rgb(97, 96, 96);">Password length: <span id="passwordLength"
+                                style="color: black;">15</span></h4>
                         <button class="btn btn-outline-secondary btn-circle" onclick="changeLength(-1)">-</button>
-                        <input type="range" id="slider" min="0" max="50" value="23" class="form-range" oninput="updateLength()">
+                        <input type="range" id="slider" min="0" max="50" value="23" class="form-range"
+                            oninput="updateLength()">
                         <button class="btn btn-outline-secondary btn-circle" onclick="changeLength(1)">+</button>
                     </div>
-                    <h4 style="color: rgb(97, 96, 96);">Password <br> length: <span id="passwordLength" style="color: black;">23</span></h4>
-    
-                    <div class="char text-center">
-                        <h5 style="color: rgb(97, 96, 96);">Characters <br> used:</h5>
-                        <div class="form-check form-check-inline">
+
+
+                    <div class="char">
+                        <div class="form-check-inline">
+                            <h5 style="color: rgb(97, 96, 96);">Characters <br> used:</h5>
+                        </div>
+                        <div class=" form-check-inline">
                             <input class="form-check-input" type="checkbox" id="uppercase" checked>
                             <label class="form-check-label" for="uppercase">ABC</label>
-                        </div>
-                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="lowercase" checked>
                             <label class="form-check-label" for="lowercase">abc</label>
-                        </div>
-                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="numbers" checked>
                             <label class="form-check-label" for="numbers">123</label>
-                        </div>
-                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="symbols">
                             <label class="form-check-label" for="symbols">#$&</label>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-            <script src="app.js"></script>
-            <script src="bootstrap.js"></script>
+
+    <!-- *****************Make password Strong******************  -->
+
+    <div class="container-fluid">
+        <div class="we-make row text-center mt-5">
+            <h1 class="mt-5">What makes a password strong?</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="assets/long.svg" alt="">
+                            <h5 class="card-title">Long</h5>
+                            <p class="card-text">The longer a password, the more secure it is. A strong password should be at least 10 characters long.</p>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="assets/complex.svg" alt="">
+                            <h5 class="card-title">Complex</h5>
+                            <p class="card-text">Strong passwords use a combination of letters, numbers, cases, and symbols to form an unpredictable string of characters that doesn't resemble words or names.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <img src="assets/unique.svg" alt="">
+                        <h5 class="card-title">Unique</h5>
+                        <p class="card-text">A strong password should be unique to each account to reduce vulnerability in the event of a hack.</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ******************Password generator FAQs************************* -->
+
+    <div class="container">
+        <div class="faq row">
+            <h1>Password generator FAQs</h1>
+            <p>Questions about this random password generator? Answers below!
+            </p>
+            <div class="accordion " id="accordionExample">
+                <div class="accordion-item ">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Do I need a unique password for every account?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Absolutely! Avast's Random Password Generator uses mathematical entropy to create a random password consisting of numbers, letters, and symbols. The characters rendered from this auto password generator are entirely random and won't transmit over the internet, providing the most secure password during the password generator process. No one, not even Avast, can see your private, personal password.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      What are the top 10 worst password?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Computers can quickly and easily guess passwords. Any hacker using a traditional desktop computer would have the opportunity to test billions of different passwords in several seconds. We've developed an online password generator to help you keep your private information secure. Our free password generator relies on mathematical randomness from an algorithm to create truly secure, random passwords.
+
+                        Most people are not good at picking random passwords and have a habit of using common names, numbers, and characters. No matter how clever you think you are, most computers can easily guess human-generated passwords. Generating a password using a combination of alphanumeric characters and special symbols ensures its security.
+                        
+                        Avoid putting your personal information at risk with Avast password generator. Our password creator generates a combination of keys to help you maximize safety and security while logging into different accounts. We don't create or store anything. Instead, your device generates the local mathematical entropy to complete the password generate process.
+                        
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      What is the best password generator>
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Yes, it is crucial to have a unique password for every online account you might have. Once passwords get saved due to a security breach, the hackers often keep them in a leaked password database. Protect yourself from having your personal information exposed on the dark web by using the Avast Random Password Generator. It will create random passwords for you to use for each account to never have to recycle your passwords again.
+
+                        Adding an extra character, symbol, or number to a password you've used with other accounts won't suffice. Save yourself time and frustration with an added level of protection by utilizing our strong password generator. The free password generator is easy to use and can help you keep your identity from landing on the dark web, where hackers and cybercriminals could use it to their advantage.
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script src="bootstrap.js"></script>
 </body>
 
 </html>

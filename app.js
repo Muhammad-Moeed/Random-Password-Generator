@@ -46,7 +46,6 @@ copyBtn.addEventListener('click', function () {
 function generatePassword(length) {
     let chars = '';
 
-    // Check which character sets should be included
     if (uppercaseCheckbox.checked) {
         chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     }
@@ -59,14 +58,10 @@ function generatePassword(length) {
     if (symbolsCheckbox.checked) {
         chars += '#$&';
     }
-
-    // If no checkboxes are selected, show an alert or set a default set of characters
     if (chars === '') {
         alert('Please select at least one character set');
         return;
     }
-
-    // Generate the password from the selected character set
     let password = '';
     for (let i = 0; i < length; i++) {
         password += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -77,19 +72,28 @@ function generatePassword(length) {
 
 // Function to evaluate password strength
 function evaluateStrength(password) {
-    if (password.length > 40) {
+    const strength = document.getElementById('strength'); // Assuming you have an element with the id 'strength'
+    
+    if (password.length > 11) {
         strength.textContent = 'Very strong';
-    } else if (password.length > 20) {
+        strength.style.backgroundColor = '#9ae437';
+    } else if (password.length > 9) {
         strength.textContent = 'Strong';
-    } else {
+        strength.style.backgroundColor = '#d5f2a5';
+    } else if (password.length > 7) {
+        strength.textContent = 'Good';
+        strength.style.backgroundColor = '#ffddbf';
+    } else if (password.length > 4) {
         strength.textContent = 'Weak';
+        strength.style.backgroundColor = '#ffb370'; 
+    } else {
+        strength.textContent = 'Very Weak';
+        strength.style.backgroundColor = '#ff7800'; 
     }
 }
 
-// Initialize password when the page loads
 generatePassword(slider.value);
 
-// Add event listeners to regenerate the password when checkboxes are clicked
 uppercaseCheckbox.addEventListener('change', () => generatePassword(slider.value));
 lowercaseCheckbox.addEventListener('change', () => generatePassword(slider.value));
 numbersCheckbox.addEventListener('change', () => generatePassword(slider.value));
